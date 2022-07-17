@@ -1,4 +1,5 @@
 import sys
+from tkinter.filedialog import SaveAs
 import clipboard
 import json
 
@@ -13,6 +14,12 @@ def save_info(filepath,info):
         json.dump(info,f)
 save_info("testing.json",{"employee":"paid"})
 
+#Loading or reading saved file as
+def load_item(filepath):
+    with open(filepath,"r") as f:
+        info =json.load(f)
+        return info
+    
 
 if len(sys.argv)==2:
     data= sys.argv[1]
